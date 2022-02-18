@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2015348754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1774681720, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 90
+    y: 343
+    width: 245
+    height: 59
+  Yes: {fileID: 11422800}
+  No: {fileID: 0}
+--- !u!114 &-1151934458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -223678153, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 485
+    y: 415
+    width: 245
+    height: 77
+  NextFilter: {fileID: 0}
+  NormalMaterial: {fileID: 2100000, guid: 297594c32ae52c14888a46536c102581, type: 2}
+  RegionMaterial: {fileID: 2100000, guid: 57089b572be7dbb4188321543afc32ab, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1074593115, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: Eraser Tool
+  m_EditorClassIdentifier: 
+  Filters:
+  - {fileID: 11444956}
+  - {fileID: 11456346}
+  - {fileID: 11428990}
+  - {fileID: 11425602}
+  - {fileID: 11422800}
+  - {fileID: 11448734}
+  - {fileID: 11454214}
+  - {fileID: 11496714}
+  StartFilter: {fileID: 11444956}
+  MinSize: {x: 2, y: 2}
+  BaseSize: {x: 100, y: 100}
+--- !u!114 &11422800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -223678153, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 587
+    y: 162
+    width: 245
+    height: 92
+  NextFilter: {fileID: 0}
+  NormalMaterial: {fileID: 2100000, guid: 103ef11dcd6c1424ca0cc52645bd1aba, type: 2}
+  RegionMaterial: {fileID: 2100000, guid: 3dc68b3ccf95f764da3178c359d09dd0, type: 2}
+--- !u!114 &11425602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 205540094, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 307
+    y: 174
+    width: 245
+    height: 59
+  NextFilter: {fileID: 11454214}
+  PointType: -1
+--- !u!114 &11428990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1770263799, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 32
+    y: 132
+    width: 245
+    height: 110
+  NextFilter: {fileID: 11425602}
+  Spacing:
+    PropertyType: 0
+    Value: 3
+--- !u!114 &11444956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1491705802, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 16
+    y: 39
+    width: 245
+    height: 56
+  NextFilter: {fileID: 11456346}
+--- !u!114 &11448734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1203617569, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 596
+    y: 38
+    width: 245
+    height: 59
+  NextFilter: {fileID: 11428990}
+  PointType: -1
+--- !u!114 &11454214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1774681720, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 280
+    y: 248
+    width: 245
+    height: 59
+  Yes: {fileID: 11422800}
+  No: {fileID: 11496714}
+--- !u!114 &11456346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -325276608, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 302
+    y: 45
+    width: 245
+    height: 56
+  NextFilter: {fileID: 11448734}
+--- !u!114 &11494338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10ea70fa82d3435da1e77ec87f1bf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    x: 620
+    y: 41
+    width: 245
+    height: 56
+  NextFilter: {fileID: 11428990}
+--- !u!114 &11496714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -223678153, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EditorWindowRect:
+    serializedVersion: 2
+    x: 580
+    y: 270
+    width: 245
+    height: 77
+  NextFilter: {fileID: 0}
+  NormalMaterial: {fileID: 2100000, guid: 297594c32ae52c14888a46536c102581, type: 2}
+  RegionMaterial: {fileID: 2100000, guid: 57089b572be7dbb4188321543afc32ab, type: 2}

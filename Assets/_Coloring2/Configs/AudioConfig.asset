@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a29aa410ad4c27bcab9ae6ba9cc068, type: 3}
+  m_Name: AudioConfig
+  m_EditorClassIdentifier: 
+  Click: {fileID: 8300000, guid: cbb904f06961eef49b8d623584b5df79, type: 3}
+  LineEnd: {fileID: 8300000, guid: 70514f252a1e01849a3fc3531a53bd39, type: 3}
+  Photo: {fileID: 8300000, guid: f7835a432afafb64994ca556d0d0621b, type: 3}
+  PickCategory: {fileID: 8300000, guid: 7e56ab315eb6f424a82da0fbe9a6a22b, type: 3}
+  SwapCategory: {fileID: 8300000, guid: 1404dfb5b88e701459e08ae03b788d6b, type: 3}
+  CorrectBirthYear: {fileID: 8300000, guid: 3310b52e4a4b3134a8f9a64613f5a47c, type: 3}
+  BgMusic: {fileID: 8300000, guid: 3968f2e788287714799d2db531b87faa, type: 3}
+  SplashSounds:
+  - {fileID: 8300000, guid: 2c839467eb7155545a19a66e3b4b46b1, type: 3}
+  - {fileID: 8300000, guid: 1c535548bab7d8e438fe6450b15b5459, type: 3}
+  - {fileID: 8300000, guid: 58ad3e6d4ae3e5c4586707431ffc1552, type: 3}
+  - {fileID: 8300000, guid: 3aeb5373c84358840a6e871bcdfb8629, type: 3}

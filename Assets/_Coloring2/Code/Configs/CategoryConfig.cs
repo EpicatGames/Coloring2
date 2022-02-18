@@ -1,0 +1,30 @@
+﻿using Coloring2.Localization;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+namespace Coloring2.Configs
+{
+    public enum Categories
+    {
+        category_animals,
+        category_princesses,
+        category_underwater,
+        category_transport,
+        category_dinosaurs,
+        category_picnic,
+        category_garden,
+        category_aliens,
+        category_houses,
+        full_version,
+        colors
+    }
+    
+    [CreateAssetMenu(fileName = "CategoryConfig", menuName = "Coloring2/CategoryConfig", order = 0)]
+    public class CategoryConfig : ScriptableObject
+    {
+        public Color Color;
+        public Categories Category;
+        public bool PurchasedByDefault;
+        public Material ParticlesMaterial;
+    }
+}
