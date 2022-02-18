@@ -13,8 +13,12 @@ namespace Coloring2.MainMenu.Settings
         private static bool CheckAge(string yearStr)
         {
             var birthYear = Convert.ToDateTime(yearStr);
-            var now = DateTime.Now;  
-            var years = new DateTime(DateTime.Now.Subtract(birthYear).Ticks).Year - 1;  
+            var now = DateTime.Now;
+            var ticks = DateTime.Now.Subtract(birthYear).Ticks;
+            if (ticks < 0)
+                return false;
+
+            var years = new DateTime(ticks).Year - 1;
             var pastYearDate = birthYear.AddYears(years);  
             var months = 0;  
             for (var i = 1; i <= 12; i++)

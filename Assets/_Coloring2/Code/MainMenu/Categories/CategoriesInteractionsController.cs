@@ -119,7 +119,7 @@ namespace Coloring2.MainMenu.Categories
            var lastRect = (RectTransform)last.transform;
             
            UpdateItemsScaleAndOpacity();
-           
+           //Debug.Log($"first: {first}, x: {first.transform.position.x}");
            if (first.transform.position.x >= 0)
            {
                lastRect.anchoredPosition = firstRect.anchoredPosition - new Vector2(_itemSize.x + _itemsGap, 0);
@@ -138,7 +138,7 @@ namespace Coloring2.MainMenu.Categories
         
        private void OnSwipe(Swiper.SwiperEventData data)
        {
-           if (data.Delta <= _swiper.MinDeltaValueForSwipe)
+           if (data.Delta <= Swiper.MinDeltaValueForSwipe)
            {
                _contentRect.DOAnchorPosX(data.PositionOnBeginSwipe.x, .4f);
                return;
