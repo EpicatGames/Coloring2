@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b817b5dbde452ab029999f485be40c, type: 3}
   m_Name: UnderwaterConfig
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 0.42745098, b: 0.70980394, a: 1}
   Category: 2
   PurchasedByDefault: 0
+  Color: {r: 0, g: 0.42745098, b: 0.70980394, a: 1}
+  PageBground: {fileID: 21300000, guid: 678057ab64d7183458c1ff6dd806ca62, type: 3}
+  ParticlesMaterial: {fileID: 2100000, guid: 2bf0aebf9a8cd6a44b39fb0e3fd20ae0, type: 2}

@@ -5,6 +5,7 @@ using Coloring2.DataServices;
 using Coloring2.MainMenu.Categories;
 using Coloring2.MainMenu.Settings;
 using Coloring2.Popups;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ namespace Coloring2.MainMenu
 {
     public class MainMenuScreenController : MonoBehaviour
     {
+        private static bool isFirstOpening = true;
+        
         [SerializeField] private CategoriesInteractionsController _categoriesInteractionsController;
         [SerializeField] private List<MenuCategory> _categories;
         [Space(10)]
@@ -21,18 +24,29 @@ namespace Coloring2.MainMenu
 
         private PlayerPurchasesService _purchaseService;
         private PlayerInteractionActionsService _playerInteractionsService;
+        private SelectedItemService _selectedItemService;
+        private ScenesSwapScreen _scenesSwapScreen;
         private AppConfig _appConfig;
 
         private void OnDestroy()
         {
-            ServicesManager.Unregister(ServicesManager.GetService<PlayerInteractionActionsService>());
-            _categoriesInteractionsController.TryPurchaseCategory -= OnTryPurchaseCategory;
+            _categoriesInteractionsController.CategorySelected -= OnCategorySelected;
             if(_playerInteractionsService != null)
                 _playerInteractionsService.SettingsButtonTapped -= OnSettingsButtonTap;
         }
 
-        private void Start()
+        private async void Start()
         {
+            _selectedItemService = ServicesManager.GetService<SelectedItemService>();
+            _purchaseService = ServicesManager.GetService<PlayerPurchasesService>();
+            _scenesSwapScreen = ServicesManager.GetService<ProjectContextService>().ScenesSwapScreen;
+            
+            if (isFirstOpening)
+            {
+                _scenesSwapScreen.Show();
+                isFirstOpening = false;
+            }
+            
             _appConfig = ServicesManager.GetService<ConfigsService>()
                 .GetConfig<AppConfig>();
             _playerInteractionsService = ServicesManager.GetService<PlayerInteractionActionsService>();
@@ -40,15 +54,25 @@ namespace Coloring2.MainMenu
             foreach (var cat in _categories)
                 cat.Init(_itemScaleCurve, _itemAlphaCurve);
             
-            SoundsManager.PlayBackgroundMusic();
             _categoriesInteractionsController.Init(_categories);
             
             _playerInteractionsService.SettingsButtonTapped += OnSettingsButtonTap;
-            _categoriesInteractionsController.TryPurchaseCategory += OnTryPurchaseCategory;
+            _categoriesInteractionsController.CategorySelected += OnCategorySelected;
+
+            await UniTask.DelayFrame(1);
+            _scenesSwapScreen.FadeOut();
         }
 
-        private void OnTryPurchaseCategory(CategoryConfig config)
+        private void OnCategorySelected(CategoryConfig config)
         {
+            if (config.PurchasedByDefault || _purchaseService.HasCategoryPurchased(config.Category))
+            {
+                _selectedItemService.Set(config);
+                _scenesSwapScreen.FadeInComplete += LoadSelectPageScene;
+                _scenesSwapScreen.FadeIn();
+                return;
+            }
+            
             var popup = OpenEnterBirthdayPopup();
             popup.Success += OnPurchaseEnterBirthdaySuccess;
         }
@@ -70,9 +94,7 @@ namespace Coloring2.MainMenu
         {
             popup.Success -= OnSettingsEnterBirthdaySuccess;
             SoundsManager.PlayCorrectBirthYear();
-            
-            Debug.Log($"SettingsEnterBirthdaySuccess!");
-            
+
             ModalPopupsManager.ShowPopup(_appConfig.SettingsPopupRef);
             ModalPopupsManager.Current.Closed += OnPopupClose;
         }
@@ -88,6 +110,12 @@ namespace Coloring2.MainMenu
         {
             popup.Closed -= OnPopupClose;
             ModalPopupsManager.RemovePopup();
+        }
+        
+        private void LoadSelectPageScene()
+        {
+            _scenesSwapScreen.FadeInComplete -= LoadSelectPageScene;
+            ScenesManager.LoadScene(ScenesManager.Scenes.SelectPageScene);
         }
     }
 }

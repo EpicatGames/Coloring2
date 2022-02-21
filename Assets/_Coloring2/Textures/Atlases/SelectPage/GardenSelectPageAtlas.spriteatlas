@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GardenSelectPageAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: dcefcbf77adbc7e4cb735242fb5ccb73, type: 3}
+    - {fileID: 2800000, guid: c835e0885f93c8a4197cb2150b90c77e, type: 3}
+    - {fileID: 2800000, guid: 26ce5163d11dd654c9e54f1d8a57689e, type: 3}
+    - {fileID: 2800000, guid: d41a9df9d5e05cb4588d5780b9555fed, type: 3}
+    - {fileID: 2800000, guid: 77f9ecc7861d558478d58fc259e4ac80, type: 3}
+    - {fileID: 2800000, guid: 2c5881340c5a6484289b9075ee72546f, type: 3}
+    - {fileID: 2800000, guid: eaa68c46020743e469d586b71aa9a8b8, type: 3}
+    - {fileID: 2800000, guid: 3197c953be326764f920250097e09b8c, type: 3}
+    - {fileID: 2800000, guid: 74d22aaae984ce148a0fd2562591af13, type: 3}
+    - {fileID: 2800000, guid: 2ee3dec90930f9d49ad302a686e2ff79, type: 3}
+    - {fileID: 2800000, guid: 9941071b47cbdeb4ba93ab546ec920ee, type: 3}
+    - {fileID: 2800000, guid: e10abaaeb463c3a4b8749f19a979665d, type: 3}
+    - {fileID: 2800000, guid: 5baf58bcb7737874b8e4bd7607fb8a99, type: 3}
+    - {fileID: 2800000, guid: 1f9511c60b2dae847a0c69899ae4d6fb, type: 3}
+    - {fileID: 2800000, guid: bd47cdf3fe0db8042aed896713f628ea, type: 3}
+    - {fileID: 2800000, guid: ba3fbf055a13a8f4090f04fa488430d4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3197c953be326764f920250097e09b8c, type: 3}
+  - {fileID: 21300000, guid: 26ce5163d11dd654c9e54f1d8a57689e, type: 3}
+  - {fileID: 21300000, guid: bd47cdf3fe0db8042aed896713f628ea, type: 3}
+  - {fileID: 21300000, guid: 2c5881340c5a6484289b9075ee72546f, type: 3}
+  - {fileID: 21300000, guid: ba3fbf055a13a8f4090f04fa488430d4, type: 3}
+  - {fileID: 21300000, guid: eaa68c46020743e469d586b71aa9a8b8, type: 3}
+  - {fileID: 21300000, guid: 1f9511c60b2dae847a0c69899ae4d6fb, type: 3}
+  - {fileID: 21300000, guid: 77f9ecc7861d558478d58fc259e4ac80, type: 3}
+  - {fileID: 21300000, guid: dcefcbf77adbc7e4cb735242fb5ccb73, type: 3}
+  - {fileID: 21300000, guid: c835e0885f93c8a4197cb2150b90c77e, type: 3}
+  - {fileID: 21300000, guid: 2ee3dec90930f9d49ad302a686e2ff79, type: 3}
+  - {fileID: 21300000, guid: d41a9df9d5e05cb4588d5780b9555fed, type: 3}
+  - {fileID: 21300000, guid: 74d22aaae984ce148a0fd2562591af13, type: 3}
+  - {fileID: 21300000, guid: 9941071b47cbdeb4ba93ab546ec920ee, type: 3}
+  - {fileID: 21300000, guid: 5baf58bcb7737874b8e4bd7607fb8a99, type: 3}
+  - {fileID: 21300000, guid: e10abaaeb463c3a4b8749f19a979665d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - g7_m
+  - g2_m
+  - g14_m
+  - g5_m
+  - g15_m
+  - g6_m
+  - g13_m
+  - g4_m
+  - garden_frame
+  - g1_m
+  - g9_m
+  - g3_m
+  - g8_m
+  - g10_m
+  - g12_m
+  - g11_m
+  m_RenderDataMap: {}
+  m_Tag: GardenSelectPageAtlas
+  m_IsVariant: 0

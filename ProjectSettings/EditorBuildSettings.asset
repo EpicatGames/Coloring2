@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Coloring2/Scenes/MainMenuScene.unity
     guid: 0d04bb75311141a4eb8c07de2eed5bb4
+  - enabled: 1
+    path: Assets/_Coloring2/Scenes/SelectPageScene.unity
+    guid: 1b0f62565fc827f47a116ea1fc9e8296
   m_configObjects: {}

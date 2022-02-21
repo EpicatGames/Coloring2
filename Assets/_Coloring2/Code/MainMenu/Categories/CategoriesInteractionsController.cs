@@ -15,17 +15,14 @@ namespace Coloring2.MainMenu.Categories
 {
     public class CategoriesInteractionsController : MonoBehaviour
     {
-        public Action<CategoryConfig> TryPurchaseCategory;
+        public Action<CategoryConfig> CategorySelected;
         
         [SerializeField] private Swiper _swiper;
 
         private List<MenuCategory> _categories;
 
         private PlayerInteractionActionsService _playerActionsService;
-        private PlayerPurchasesService _playerPurchasesService;
 
-        private RectTransform _viewport;
-        private RectTransform _contentRect;
         private Vector2 _centerScreen;
         private Vector2 _itemSize;
         private float _itemsGap;
@@ -35,14 +32,12 @@ namespace Coloring2.MainMenu.Categories
         {
             _categories = categories;
             
-            _playerPurchasesService = ServicesManager.GetService<PlayerPurchasesService>();
             _playerActionsService = ServicesManager.GetService<PlayerInteractionActionsService>();
             _playerActionsService.MenuCategoryTapped += OnMenuCategoryTapped;
 
-            _viewport = _swiper.viewport;
-            _centerScreen = new Vector2(_viewport.rect.width * .5f, _viewport.rect.height * .5f);
-            _contentRect = _swiper.content.GetComponent<RectTransform>();
-            _contentRect.anchoredPosition = new Vector2(_viewport.rect.width, 0);
+            var rect = _swiper.viewport.rect;
+            _centerScreen = new Vector2(rect.width * .5f, rect.height * .5f);
+            _swiper.SetContentPosition(new Vector2(rect.width, 0));
             _itemsGap = _swiper.content.GetComponent<HorizontalLayoutGroup>().spacing;
 
             var first = _categories.First();
@@ -71,14 +66,14 @@ namespace Coloring2.MainMenu.Categories
         {
             var pos = _centerScreen.x - item.RectTransform.anchoredPosition.x;
             if(anim)
-                _contentRect.DOAnchorPosX(pos, .4f);
+                _swiper.AnimateContentHorizontalTo(pos, .4f);
             else
-                _contentRect.anchoredPosition = new Vector2(pos, 0);
+                _swiper.SetContentPosition(new Vector2(pos, 0));
             _selectedCategory = item;
         }
 
         private MenuCategory GetFirstCategory()
-       {
+        {
            var min = float.MaxValue;
            MenuCategory result = null;
            foreach (var cat in _categories)
@@ -140,14 +135,12 @@ namespace Coloring2.MainMenu.Categories
        {
            if (data.Delta <= Swiper.MinDeltaValueForSwipe)
            {
-               _contentRect.DOAnchorPosX(data.PositionOnBeginSwipe.x, .4f);
+               _swiper.AnimateContentHorizontalTo(data.PositionOnBeginSwipe.x, .4f);
                return;
            }
            
            var index = _categories.IndexOf(_selectedCategory) + (data.Direction == Swiper.Directions.Left ? 1 : -1);
-           //Debug.Log($"{string.Join(",", _categories.Select(c => c.gameObject.name))}");
            SelectCategoryItem(_categories[index], true);
-           
            SoundsManager.PlaySwapCategory();
        }
         
@@ -159,13 +152,7 @@ namespace Coloring2.MainMenu.Categories
            if (dist > _itemSize.x * .5f)
                SelectCategoryItem(item, true);
            else
-           {
-               if (item.Config.PurchasedByDefault || _playerPurchasesService.HasCategoryPurchased(item.Config.Category))
-               {
-                   return;
-               }
-               TryPurchaseCategory?.Invoke(item.Config);
-           }
+               CategorySelected?.Invoke(item.Config);
        }
        #endregion
     }

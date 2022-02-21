@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b817b5dbde452ab029999f485be40c, type: 3}
   m_Name: DinosaursConfig
   m_EditorClassIdentifier: 
-  Color: {r: 1, g: 0.5921569, b: 0, a: 1}
   Category: 4
   PurchasedByDefault: 0
+  Color: {r: 1, g: 0.5921569, b: 0, a: 1}
+  PageBground: {fileID: 21300000, guid: 75c38a66f96fd7945878c132b16edd52, type: 3}
+  ParticlesMaterial: {fileID: 2100000, guid: 5af4adad7e1c6c74f80dbf82706474c4, type: 2}

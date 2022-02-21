@@ -7,8 +7,20 @@ namespace Coloring2.Configs
     [CreateAssetMenu(fileName = "AppConfig", menuName = "Coloring2/AppConfig", order = 0)]
     public class AppConfig : ScriptableObject
     {
+#if UNITY_EDITOR
+        public enum ScenesToLoad
+        {
+            SpashScreenScene = 1,
+            MainMenuScene = 2,
+            SelectPageScene = 3,
+            PaintingScene = 4
+        }
+        public ScenesToLoad SceneToLoadAferStartApp;
+#endif
+        
+        [Space(10)]
         public RectTransform PopupsContainerRef;
-        public ScenesManager.Scenes SceneToLoadAferStartApp;
+        public ScenesSwapScreen ScenesSwapScreenRef;
         
         [Space(10)]
         public EnterBirthdayPopup EnterBirthdayPopupRef;

@@ -14,14 +14,12 @@ namespace Coloring2.Popups
         public static T ShowPopup<T>(IPopup popupPrefab) where T : IPopup
         {
             ShowPopupInternal(popupPrefab);
-            Current.Show();
             return (T) Current;
         }
         
         public static void ShowPopup(IPopup popupPrefab)
         {
             ShowPopupInternal(popupPrefab);
-            Current.Show();
         }
 
         private static void ShowPopupInternal(IPopup popupPrefab)
@@ -36,6 +34,7 @@ namespace Coloring2.Popups
                 throw new Exception("The popup prefab must have a script that implements the IPopup interface");
         
             Current = Object.Instantiate(popupPrefab.gameObject, _root).GetComponent<IPopup>();
+            Current.Show();
         }
 
         public static void RemovePopup()

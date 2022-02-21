@@ -1,4 +1,5 @@
-﻿using Coloring2.CommonComponents;
+﻿using System;
+using Coloring2.CommonComponents;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,14 +14,13 @@ namespace Coloring2.MainMenu.Settings
         {
             _toggle = GetComponentInChildren<Toggle>();
             _rotator = GetComponentInChildren<ImageInfinityRotator>();
+        }
+
+        protected virtual void Start()
+        {
             _toggle.onValueChanged.AddListener(OnToggle);
         }
-        
-        protected void Start()
-        {
-            OnToggle(true);
-        }
-        
+
         protected void OnDestroy()
         {
             _toggle.onValueChanged.RemoveListener(OnToggle);
@@ -32,6 +32,7 @@ namespace Coloring2.MainMenu.Settings
                 _rotator.Begin();
             else
                 _rotator.Pause(false);
+            
             _toggle.targetGraphic.enabled = !value;
         }
     }

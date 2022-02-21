@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Aliens11Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: 68d983466088bf346b37453b306e7c19, type: 3}
+  RegionsImage: {fileID: 21300000, guid: 896ce81d149624b4abb2d5cb2c94afe3, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: e01c1ade2ebb4c44f9d3cac2564eea1e, type: 3}

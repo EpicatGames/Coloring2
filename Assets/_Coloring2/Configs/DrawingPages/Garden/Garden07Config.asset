@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Garden07Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: 3197c953be326764f920250097e09b8c, type: 3}
+  RegionsImage: {fileID: 21300000, guid: dafa138539ee5f945b52c870a63cdfe7, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: f7a60a40532ac974a9bc1df2eb2e6144, type: 3}

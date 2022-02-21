@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Dinosaurs10Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: 6c1895e2076c84c478383ede08810af7, type: 3}
+  RegionsImage: {fileID: 21300000, guid: 8b8feb5bd9c446b40beed4968cc87fef, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: 19d6e671126b1ae4a94b6f1cd6ec5741, type: 3}

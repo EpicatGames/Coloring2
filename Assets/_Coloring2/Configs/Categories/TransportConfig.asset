@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b817b5dbde452ab029999f485be40c, type: 3}
   m_Name: TransportConfig
   m_EditorClassIdentifier: 
-  Color: {r: 0.92941177, g: 0.047058824, b: 0.047058824, a: 1}
   Category: 3
   PurchasedByDefault: 0
+  Color: {r: 0.92941177, g: 0.047058824, b: 0.047058824, a: 1}
+  PageBground: {fileID: 21300000, guid: 15102945fda8f434ab520f18c386e1d0, type: 3}
+  ParticlesMaterial: {fileID: 2100000, guid: f5913a6016e94c645bd39195f56bf100, type: 2}

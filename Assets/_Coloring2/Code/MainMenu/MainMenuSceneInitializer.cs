@@ -8,13 +8,15 @@ namespace Coloring2.MainMenu
     {
         private void Awake()
         {
-            if (AppInitializer.Initialized == false)
+            if (StartApplication.Initialized == false)
             {
                 ScenesManager.LoadScene(ScenesManager.Scenes.StartAppScene);
                 return;
             }
             
             ServicesManager.Register<PlayerInteractionActionsService>(new PlayerInteractionActionsService());
+            if(SoundsManager.MusicOn)
+                SoundsManager.PlayBackgroundMusic();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Coloring2
 
         public static bool MusicOn
         {
-            get => _musicOn = true;
+            get => _musicOn;
             set
             {
                 _musicOn = value;
@@ -40,6 +40,8 @@ namespace Coloring2
                 }
                 else
                 {
+                    if(_bgMusicSource.isPlaying)
+                        return;
                     _bgMusicSource.Play();
                     _bgMusicSource.DOFade(1, .8f);
                 }
@@ -72,9 +74,11 @@ namespace Coloring2
         
         public static void PlayBackgroundMusic()
         {
-            if(!_musicOn)
+            
+            if(!_musicOn || _bgMusicSource.isPlaying)
                 return;
             
+            Debug.Log($"musicOn: {_musicOn}, isPlaying: {_bgMusicSource.isPlaying}");
             _bgMusicSource.clip = Config.BgMusic;
             _bgMusicSource.Play();
         }

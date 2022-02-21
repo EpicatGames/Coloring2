@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Animal08Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: bfae106ef56e7e54494e74b66eab4257, type: 3}
+  RegionsImage: {fileID: 21300000, guid: 3be13e6ea5c723649bec6366e552e1c5, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: 5c1af71e12635254298885b1e99c6eec, type: 3}

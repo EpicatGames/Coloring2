@@ -15,7 +15,7 @@ namespace Coloring2
 
         private void Awake()
         {
-            if(AppInitializer.Initialized == false)
+            if(StartApplication.Initialized == false)
                 ScenesManager.LoadScene(ScenesManager.Scenes.StartAppScene);
 
             _renderer = GetComponent<SpriteRenderer>();

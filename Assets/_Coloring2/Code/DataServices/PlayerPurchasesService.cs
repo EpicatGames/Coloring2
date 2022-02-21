@@ -24,12 +24,11 @@ namespace Coloring2.DataServices
         //     Categories.category_houses,
         //     Categories.category_full
         // };
-
-
+        
         public Action<string> Purchased;
         public Action SuccessfulCrossPromo;
 
-        private List<Categories> _purchasedCategories = new List<Categories>();
+        public List<Categories> PurchasedCategories { get; } = new List<Categories>();
         private List<CategoryConfig> _categoryConfigs;
 
         public bool BoughtSomething { get; private set; }
@@ -50,7 +49,7 @@ namespace Coloring2.DataServices
             SuccessfulCrossPromo -= OnSuccessfulCrossPromo;
         }
 
-        public bool HasCategoryPurchased(Categories category) => _purchasedCategories.Contains(category);
+        public bool HasCategoryPurchased(Categories category) => PurchasedCategories.Contains(category);
 
         private void CheckOnStart()
         {
@@ -58,10 +57,16 @@ namespace Coloring2.DataServices
             foreach (var cat in _categoryConfigs)
             {
                 if(PlayerPrefs.GetInt(cat.ToString()) > 0 || cat.PurchasedByDefault)
-                    _purchasedCategories.Add(cat.Category);
+                    PurchasedCategories.Add(cat.Category);
             }
+            
+            ////////////////////// TEMP /////////////////////
+            PurchasedCategories.Add(Categories.category_aliens);
+            PurchasedCategories.Add(Categories.category_dinosaurs);
+            PurchasedCategories.Add(Categories.category_garden);
+            ////////////////////////////////////////////////
 
-            if (_purchasedCategories.Count > 0)
+            if (PurchasedCategories.Count > 0)
                 SetBoughtSomething();
         }
 

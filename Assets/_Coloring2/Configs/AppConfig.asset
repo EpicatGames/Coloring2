@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549aa28e52c04e87a1209d508b640f32, type: 3}
   m_Name: AppConfig
   m_EditorClassIdentifier: 
+  SceneToLoadAferStartApp: 2
   PopupsContainerRef: {fileID: 7783288976325489819, guid: 5fd5eb2061ba253408a52545dc32e986,
     type: 3}
-  SceneToLoadAferStartApp: 2
+  ScenesSwapScreenRef: {fileID: 4379634066441586064, guid: ff88733271762824398663cc7bff2bd1,
+    type: 3}
   EnterBirthdayPopupRef: {fileID: 1402058251772440514, guid: e8ae7dbdd348e1b4faa4c19ce3e9f0f5,
     type: 3}
   SettingsPopupRef: {fileID: 4714940258911675663, guid: be373ff9dd4644a46a03dd3941ed2b16,

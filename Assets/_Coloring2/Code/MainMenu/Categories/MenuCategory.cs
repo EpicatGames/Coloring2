@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Coffee.UIEffects;
 using Coffee.UIExtensions;
 using Coloring2.Configs;
@@ -6,6 +7,8 @@ using Coloring2.DataServices;
 using Coloring2.Localization;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using ntw.CurvedTextMeshPro;
 using TMPro;
 using UnityEngine;
@@ -31,6 +34,8 @@ namespace Coloring2.MainMenu.Categories
         private CanvasGroup _canvasGroup;
         private AnimationCurve _scaleCurve;
         private AnimationCurve _alphaCurve;
+        private TweenerCore<Vector2, Vector2, VectorOptions> _flyingTween;
+        private CancellationTokenSource _cancellationToken;
 
         public CategoryConfig Config => _config;
         
@@ -46,7 +51,13 @@ namespace Coloring2.MainMenu.Categories
             Size = RectTransform.sizeDelta;
         }
 
-        public async void Init(AnimationCurve scaleCurve, AnimationCurve alphaCurve)
+        private void OnDestroy()
+        {
+            _flyingTween?.Kill();
+            _cancellationToken?.Cancel();
+        }
+
+        public void Init(AnimationCurve scaleCurve, AnimationCurve alphaCurve)
         {
             _scaleCurve = scaleCurve;
             _alphaCurve = alphaCurve;
@@ -64,18 +75,17 @@ namespace Coloring2.MainMenu.Categories
             var interactor = GetComponentInChildren<CategoryInteractor>();
             interactor.Init(this);
 
-            if (Config.ParticlesMaterial != null)
-            {
-                var r = _particleSystem.GetComponent<ParticleSystemRenderer>();
-                r.sharedMaterial = Config.ParticlesMaterial;
-            }
-            
             CheckPurchase();
             
-            await UniTask.Delay(TimeSpan.FromSeconds(Random.Range(0, 2f)));
-            
+            _cancellationToken = new CancellationTokenSource();
+            UniTask.Delay(TimeSpan.FromSeconds(Random.Range(0, 2f)), cancellationToken: _cancellationToken.Token)
+                .ContinueWith(StartFlyingBehaviour);
+        }
+
+        private void StartFlyingBehaviour()
+        {
             var flyingRect = _flyingContainer.GetComponent<RectTransform>();
-            flyingRect.DOAnchorPosY(Size.y * .1f, 3f)
+            _flyingTween = flyingRect.DOAnchorPosY(Size.y * .1f, 3f)
                 .SetLoops(-1, LoopType.Yoyo)
                 .SetEase(Ease.InOutSine);
         }
@@ -90,6 +100,7 @@ namespace Coloring2.MainMenu.Categories
             }
             else
             {
+                _particleSystem.GetComponent<ParticleSystemRenderer>().sharedMaterial = Config.ParticlesMaterial;
                 _lockIcon.SetActive(false);
                 _particleSystem.Play();
             }

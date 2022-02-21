@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b817b5dbde452ab029999f485be40c, type: 3}
   m_Name: PrincessConfig
   m_EditorClassIdentifier: 
-  Color: {r: 1, g: 0.101960786, b: 0.5058824, a: 1}
   Category: 1
   PurchasedByDefault: 0
+  Color: {r: 1, g: 0.101960786, b: 0.5058824, a: 1}
+  PageBground: {fileID: 21300000, guid: 1dd664d7e7231af46be7b74871984b67, type: 3}
+  ParticlesMaterial: {fileID: 2100000, guid: b234d7ef778485e48afefdd4a194a854, type: 2}

@@ -17,22 +17,17 @@ namespace Coloring2.CommonComponents
         private bool _paused;
         private Image _image;
 
-        private void Awake()
-        {
-            _image = GetComponent<Image>();
-        }
+        private void Awake() => _image = GetComponent<Image>();
 
-        private void OnDestroy()
-        {
-            Stop();
-        }
+        private void OnDestroy() => Stop();
 
         public void Begin()
         {
+            if (!_image.enabled)
+                _image.enabled = true;
+            
             if (_tween != null && _paused)
             {
-                if (!_image.enabled)
-                    _image.enabled = true;
                 _tween.Play();
                 return;
             }
@@ -48,9 +43,6 @@ namespace Coloring2.CommonComponents
             _image.enabled = visible;
         }
         
-        public void Stop()
-        {
-            _tween.Kill();
-        }
+        public void Stop() => _tween.Kill();
     }
 }

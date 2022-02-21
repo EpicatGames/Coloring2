@@ -20,11 +20,14 @@ namespace Coloring2.Configs
     }
     
     [CreateAssetMenu(fileName = "CategoryConfig", menuName = "Coloring2/CategoryConfig", order = 0)]
-    public class CategoryConfig : ScriptableObject
+    public class CategoryConfig : ScriptableObject, ISelectable
     {
-        public Color Color;
         public Categories Category;
         public bool PurchasedByDefault;
+
+        [Space(5)]
+        public Color Color;
+        public Sprite PageBground;
         public Material ParticlesMaterial;
     }
 }

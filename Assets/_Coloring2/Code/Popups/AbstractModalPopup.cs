@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Coloring2.Popups
 {
-    public class AbstractModalPopup : MonoBehaviour, IPopup
+    public abstract class AbstractModalPopup : MonoBehaviour, IPopup
     {
         public event Action<IPopup> Closed;
         
@@ -20,9 +21,9 @@ namespace Coloring2.Popups
         protected virtual void Awake()
         {
             _blocker.color = Color.clear;
-            _windowBottomYPosition = -Screen.height - _window.sizeDelta.y * .5f;
-            _window.localPosition = new Vector3(0, Screen.height + _window.sizeDelta.y * .5f, 0);;
-            
+            _windowBottomYPosition = -Screen.height - _window.sizeDelta.y * .7f;
+            _window.localPosition = new Vector3(0, Screen.height + _window.sizeDelta.y * .7f, 0);
+
             var trigger = _blocker.gameObject.AddComponent<EventTrigger>();
             _entry = new EventTrigger.Entry {eventID = EventTriggerType.PointerDown};
             _entry.callback.AddListener(OnBlockerTap);
@@ -48,7 +49,7 @@ namespace Coloring2.Popups
         public virtual void Show()
         {
             _closeButton.onClick.AddListener(Close);
-            _window.DOLocalMoveY(0, .4f)
+            _window.transform.DOLocalMoveY(0, .4f)
                 .OnComplete(() => _blocker.DOFade(0.2f, 1));
         }
     }
