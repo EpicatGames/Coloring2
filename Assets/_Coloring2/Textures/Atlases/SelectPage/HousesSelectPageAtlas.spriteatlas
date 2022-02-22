@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HousesSelectPageAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 8ae5666c0e356604da787db92c4fb354, type: 3}
+    - {fileID: 2800000, guid: 5f1ed38091a052d47a8f32039d6d06cc, type: 3}
+    - {fileID: 2800000, guid: 8ad03999e53c1a54db9151e1da607311, type: 3}
+    - {fileID: 2800000, guid: d7b1bfbe85ba52044ba57755afe3e032, type: 3}
+    - {fileID: 2800000, guid: 3b759a0582dc5004a88c02cd435267a4, type: 3}
+    - {fileID: 2800000, guid: bcffbbc685c86c947982692e16f1f3d7, type: 3}
+    - {fileID: 2800000, guid: affe90a022d6ed945965e198bc5d45ee, type: 3}
+    - {fileID: 2800000, guid: 173b1f39b8f78e94d91ce98f5c6ff922, type: 3}
+    - {fileID: 2800000, guid: 1a5686439a79a77469d1b7df127e70e6, type: 3}
+    - {fileID: 2800000, guid: 2dc6ed642bf30ba4a96e67e3f19127a8, type: 3}
+    - {fileID: 2800000, guid: 6b105951f63202b4fbfb41f55474bfc1, type: 3}
+    - {fileID: 2800000, guid: c7d5b769deff02445be9932521eb075e, type: 3}
+    - {fileID: 2800000, guid: a38d13339f5a0614d83d640725fe85a0, type: 3}
+    - {fileID: 2800000, guid: 8040aa3e4b1577445b8485e6f7c9b55d, type: 3}
+    - {fileID: 2800000, guid: d788a16183b6d564ba15c31574e18cb3, type: 3}
+    - {fileID: 2800000, guid: bcf972067bbbe024a888d71e4ae59f46, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5f1ed38091a052d47a8f32039d6d06cc, type: 3}
+  - {fileID: 21300000, guid: affe90a022d6ed945965e198bc5d45ee, type: 3}
+  - {fileID: 21300000, guid: 6b105951f63202b4fbfb41f55474bfc1, type: 3}
+  - {fileID: 21300000, guid: d788a16183b6d564ba15c31574e18cb3, type: 3}
+  - {fileID: 21300000, guid: a38d13339f5a0614d83d640725fe85a0, type: 3}
+  - {fileID: 21300000, guid: 1a5686439a79a77469d1b7df127e70e6, type: 3}
+  - {fileID: 21300000, guid: 2dc6ed642bf30ba4a96e67e3f19127a8, type: 3}
+  - {fileID: 21300000, guid: 3b759a0582dc5004a88c02cd435267a4, type: 3}
+  - {fileID: 21300000, guid: bcf972067bbbe024a888d71e4ae59f46, type: 3}
+  - {fileID: 21300000, guid: bcffbbc685c86c947982692e16f1f3d7, type: 3}
+  - {fileID: 21300000, guid: 173b1f39b8f78e94d91ce98f5c6ff922, type: 3}
+  - {fileID: 21300000, guid: c7d5b769deff02445be9932521eb075e, type: 3}
+  - {fileID: 21300000, guid: 8ad03999e53c1a54db9151e1da607311, type: 3}
+  - {fileID: 21300000, guid: 8ae5666c0e356604da787db92c4fb354, type: 3}
+  - {fileID: 21300000, guid: 8040aa3e4b1577445b8485e6f7c9b55d, type: 3}
+  - {fileID: 21300000, guid: d7b1bfbe85ba52044ba57755afe3e032, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - h1_m
+  - h6_m
+  - h10_m
+  - h14_m
+  - h12_m
+  - h8_m
+  - h9_m
+  - h4_m
+  - h15_m
+  - h5_m
+  - h7_m
+  - h11_m
+  - h2_m
+  - houses_frame
+  - h13_m
+  - h3_m
+  m_RenderDataMap: {}
+  m_Tag: HousesSelectPageAtlas
+  m_IsVariant: 0

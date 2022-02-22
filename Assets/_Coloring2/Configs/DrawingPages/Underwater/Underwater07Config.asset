@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Underwater07Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: 4c11d0bdee591d84cbb714c4700f5461, type: 3}
+  RegionsImage: {fileID: 21300000, guid: 0f4f68faeb316dd43bd528cc956f0cfc, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: 51d3fe8dfbeae0f43ba12d8f988484ed, type: 3}

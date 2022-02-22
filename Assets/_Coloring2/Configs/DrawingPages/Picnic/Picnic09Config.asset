@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Picnic09Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: a468cc446858d674faeb2517aa982628, type: 3}
+  RegionsImage: {fileID: 21300000, guid: c09e2676356f5294f95f1dd50a275d2c, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: 35c927c7b4ab12048aef121028a4238c, type: 3}

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Transport09Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: 5208674e2430943498a93ad6dbdd0cf6, type: 3}
+  RegionsImage: {fileID: 21300000, guid: 065d34f2384f52746be89e4d21164d69, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: df82635310e27ba4cb59d7c93bdd21e9, type: 3}

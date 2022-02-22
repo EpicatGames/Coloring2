@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Princess01Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: 4aad83ae86eb37a44ab2729b7064040e, type: 3}
+  RegionsImage: {fileID: 21300000, guid: 4e93a13ef5652204fad50ccec2da5b44, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: 2dfb6b49368ee72419ca74e2fc247d70, type: 3}

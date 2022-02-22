@@ -64,7 +64,12 @@ namespace Coloring2.DataServices
             PurchasedCategories.Add(Categories.category_aliens);
             PurchasedCategories.Add(Categories.category_dinosaurs);
             PurchasedCategories.Add(Categories.category_garden);
-            ////////////////////////////////////////////////
+            PurchasedCategories.Add(Categories.category_houses);
+            PurchasedCategories.Add(Categories.category_picnic);
+            PurchasedCategories.Add(Categories.category_princesses);
+            PurchasedCategories.Add(Categories.category_transport);
+            PurchasedCategories.Add(Categories.category_underwater);
+            /////////////////////////////////////////////////
 
             if (PurchasedCategories.Count > 0)
                 SetBoughtSomething();

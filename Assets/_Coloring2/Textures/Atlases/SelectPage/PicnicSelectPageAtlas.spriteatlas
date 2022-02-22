@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PicnicSelectPageAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: d0eba05d4c49fbd4c888dabbeb03366b, type: 3}
+    - {fileID: 2800000, guid: ed9c1a7978442944aa6d25570c301469, type: 3}
+    - {fileID: 2800000, guid: 88e45e116a4c2f945804b9ac9d55b557, type: 3}
+    - {fileID: 2800000, guid: d14be591e3b54a540b2598d0a7c6a5ca, type: 3}
+    - {fileID: 2800000, guid: 144ecd3bb23bee345a60fee8c11a56b6, type: 3}
+    - {fileID: 2800000, guid: 79694d11f313f734caa292790190e0f7, type: 3}
+    - {fileID: 2800000, guid: 4be24756b251068418e58212e6cfda64, type: 3}
+    - {fileID: 2800000, guid: 8ebb58bf7efe3954193700424efd7b7c, type: 3}
+    - {fileID: 2800000, guid: 809b521c06cb4dc4586fe296eba9249b, type: 3}
+    - {fileID: 2800000, guid: a468cc446858d674faeb2517aa982628, type: 3}
+    - {fileID: 2800000, guid: 6f099f72fc623fe4bb37462b7a520baa, type: 3}
+    - {fileID: 2800000, guid: e61a2e5a31a91df4194ba26e4e332fae, type: 3}
+    - {fileID: 2800000, guid: 5d132c59e101f4a40b009122615bb267, type: 3}
+    - {fileID: 2800000, guid: c3ce58acbfac30f438ba3fe1ecae934a, type: 3}
+    - {fileID: 2800000, guid: 7d0126f12b0277f4a8198d6f7ac908d1, type: 3}
+    - {fileID: 2800000, guid: e8a917d5545002044b2a94fa8da1097d, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 79694d11f313f734caa292790190e0f7, type: 3}
+  - {fileID: 21300000, guid: 88e45e116a4c2f945804b9ac9d55b557, type: 3}
+  - {fileID: 21300000, guid: d14be591e3b54a540b2598d0a7c6a5ca, type: 3}
+  - {fileID: 21300000, guid: 7d0126f12b0277f4a8198d6f7ac908d1, type: 3}
+  - {fileID: 21300000, guid: 6f099f72fc623fe4bb37462b7a520baa, type: 3}
+  - {fileID: 21300000, guid: a468cc446858d674faeb2517aa982628, type: 3}
+  - {fileID: 21300000, guid: e8a917d5545002044b2a94fa8da1097d, type: 3}
+  - {fileID: 21300000, guid: 4be24756b251068418e58212e6cfda64, type: 3}
+  - {fileID: 21300000, guid: 5d132c59e101f4a40b009122615bb267, type: 3}
+  - {fileID: 21300000, guid: ed9c1a7978442944aa6d25570c301469, type: 3}
+  - {fileID: 21300000, guid: e61a2e5a31a91df4194ba26e4e332fae, type: 3}
+  - {fileID: 21300000, guid: 144ecd3bb23bee345a60fee8c11a56b6, type: 3}
+  - {fileID: 21300000, guid: 809b521c06cb4dc4586fe296eba9249b, type: 3}
+  - {fileID: 21300000, guid: c3ce58acbfac30f438ba3fe1ecae934a, type: 3}
+  - {fileID: 21300000, guid: d0eba05d4c49fbd4c888dabbeb03366b, type: 3}
+  - {fileID: 21300000, guid: 8ebb58bf7efe3954193700424efd7b7c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - f5_m
+  - f2_m
+  - f3_m
+  - f14_m
+  - f10_m
+  - f9_m
+  - f15_m
+  - f6_m
+  - f12_m
+  - f1_m
+  - f11_m
+  - f4_m
+  - f8_m
+  - f13_m
+  - picnic_frame
+  - f7_m
+  m_RenderDataMap: {}
+  m_Tag: PicnicSelectPageAtlas
+  m_IsVariant: 0

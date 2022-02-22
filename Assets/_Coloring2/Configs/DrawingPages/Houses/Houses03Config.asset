@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Name: Houses03Config
+  m_EditorClassIdentifier: 
+  MiniaturImage: {fileID: 21300000, guid: d7b1bfbe85ba52044ba57755afe3e032, type: 3}
+  RegionsImage: {fileID: 21300000, guid: efca1b15dcea6d04ab39fb1a7c4dc501, type: 3}
+  ColorizedImage: {fileID: 21300000, guid: 544ee530999ca854ab13e656bea2ecce, type: 3}
