@@ -1,4 +1,6 @@
 ﻿using Coloring2.MainMenu.Settings;
+using Coloring2.PaintingPage;
+using Coloring2.Popups;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -25,5 +27,6 @@ namespace Coloring2.Configs
         [Space(10)]
         public EnterBirthdayPopup EnterBirthdayPopupRef;
         public SettingsPopup SettingsPopupRef;
+        public ColorsPurchasePopup ColorsPurchasePopupRef;
     }
 }

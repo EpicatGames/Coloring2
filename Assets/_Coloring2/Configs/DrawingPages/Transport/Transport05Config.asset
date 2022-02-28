@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Transport05Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: da8503005191a954eb5163cac1142c7a, type: 3}
-  RegionsImage: {fileID: 21300000, guid: 448fe86fc49610a438c9712a94b0f6b5, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: 8821b3f4ab5f6114395fbd1bdab99000, type: 3}
+  streamingAssetPath: Coloring2/Transport/5
+  version: 0

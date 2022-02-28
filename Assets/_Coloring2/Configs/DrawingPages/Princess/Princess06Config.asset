@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Princess06Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: caea5d5be69768a498e6636d26c7d2ca, type: 3}
-  RegionsImage: {fileID: 21300000, guid: 47f7fc006f15b984eb1745172ae51472, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: 613b2072d3300d54a85528b20318a197, type: 3}
+  streamingAssetPath: Coloring2/Princess/6
+  version: 0

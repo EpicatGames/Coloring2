@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Underwater07Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: 4c11d0bdee591d84cbb714c4700f5461, type: 3}
-  RegionsImage: {fileID: 21300000, guid: 0f4f68faeb316dd43bd528cc956f0cfc, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: 51d3fe8dfbeae0f43ba12d8f988484ed, type: 3}
+  streamingAssetPath: Coloring2/Underwater/7
+  version: 0

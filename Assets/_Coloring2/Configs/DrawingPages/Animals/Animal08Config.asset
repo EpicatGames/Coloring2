@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Animal08Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: bfae106ef56e7e54494e74b66eab4257, type: 3}
-  RegionsImage: {fileID: 21300000, guid: 3be13e6ea5c723649bec6366e552e1c5, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: 5c1af71e12635254298885b1e99c6eec, type: 3}
+  streamingAssetPath: Coloring2/Animals/8
+  version: 0

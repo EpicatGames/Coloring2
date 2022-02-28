@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Aliens15Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: e9e7e2cbfc5da344ea1422be960fe7d6, type: 3}
-  RegionsImage: {fileID: 21300000, guid: ed34cb5bcc966ba48b5505d52dc21075, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: af1295c1dc546f34f917975452b28a5d, type: 3}
+  streamingAssetPath: Coloring2/Aliens/15
+  version: 0

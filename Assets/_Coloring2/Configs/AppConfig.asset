@@ -21,3 +21,5 @@ MonoBehaviour:
     type: 3}
   SettingsPopupRef: {fileID: 4714940258911675663, guid: be373ff9dd4644a46a03dd3941ed2b16,
     type: 3}
+  ColorsPurchasePopupRef: {fileID: 381731109104641697, guid: 20104eb874d099047bfefa06ea2241e0,
+    type: 3}

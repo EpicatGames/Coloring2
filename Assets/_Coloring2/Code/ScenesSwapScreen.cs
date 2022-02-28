@@ -9,9 +9,6 @@ namespace Coloring2
     [RequireComponent(typeof(CanvasScaler))]
     public class ScenesSwapScreen : MonoBehaviour
     {
-        public event Action FadeInComplete;
-        public event Action FadeOutComplete;
-        
         private CanvasGroup _canvasGroup;
 
         private void Awake()
@@ -23,14 +20,14 @@ namespace Coloring2
 
         public void Hide() => _canvasGroup.alpha = 0;
         
-        public void FadeIn()
+        public void FadeIn(Action complete = null)
         {
-            _canvasGroup.DOFade(1, 0.6f).OnComplete(() => FadeInComplete?.Invoke());
+            _canvasGroup.DOFade(1, 0.6f).OnComplete(() => complete?.Invoke());
         }
         
-        public void FadeOut()
+        public void FadeOut(Action complete = null)
         {
-            _canvasGroup.DOFade(0, 0.6f).OnComplete(() => FadeOutComplete?.Invoke());
+            _canvasGroup.DOFade(0, 0.6f).OnComplete(() => complete?.Invoke());
         }
     }
 }

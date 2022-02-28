@@ -12,7 +12,7 @@ namespace Coloring2.Popups
         public event Action<IPopup> Closed;
         
         [SerializeField] private Image _blocker;
-        [SerializeField] private RectTransform _window;
+        [SerializeField] protected RectTransform _window;
         
         private float _windowBottomYPosition;
         private EventTrigger.Entry _entry;

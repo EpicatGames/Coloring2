@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Houses10Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: 6b105951f63202b4fbfb41f55474bfc1, type: 3}
-  RegionsImage: {fileID: 21300000, guid: ed3e23d16074d1844af91990008b50b0, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: 6d93d186808cae34cb05bc5694d62761, type: 3}
+  streamingAssetPath: Coloring2/Houses/10
+  version: 0

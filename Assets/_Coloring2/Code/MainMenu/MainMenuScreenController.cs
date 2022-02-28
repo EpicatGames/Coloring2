@@ -24,7 +24,7 @@ namespace Coloring2.MainMenu
 
         private PlayerPurchasesService _purchaseService;
         private PlayerInteractionActionsService _playerInteractionsService;
-        private SelectedItemService _selectedItemService;
+        private SelectedCategoryService _selectedCategoryService;
         private ScenesSwapScreen _scenesSwapScreen;
         private AppConfig _appConfig;
 
@@ -37,7 +37,7 @@ namespace Coloring2.MainMenu
 
         private async void Start()
         {
-            _selectedItemService = ServicesManager.GetService<SelectedItemService>();
+            _selectedCategoryService = ServicesManager.GetService<SelectedCategoryService>();
             _purchaseService = ServicesManager.GetService<PlayerPurchasesService>();
             _scenesSwapScreen = ServicesManager.GetService<ProjectContextService>().ScenesSwapScreen;
             
@@ -67,9 +67,8 @@ namespace Coloring2.MainMenu
         {
             if (config.PurchasedByDefault || _purchaseService.HasCategoryPurchased(config.Category))
             {
-                _selectedItemService.Set(config);
-                _scenesSwapScreen.FadeInComplete += LoadSelectPageScene;
-                _scenesSwapScreen.FadeIn();
+                _selectedCategoryService.Set(config);
+                _scenesSwapScreen.FadeIn(() => ScenesManager.LoadScene(ScenesManager.Scenes.SelectPageScene));
                 return;
             }
             
@@ -110,12 +109,6 @@ namespace Coloring2.MainMenu
         {
             popup.Closed -= OnPopupClose;
             ModalPopupsManager.RemovePopup();
-        }
-        
-        private void LoadSelectPageScene()
-        {
-            _scenesSwapScreen.FadeInComplete -= LoadSelectPageScene;
-            ScenesManager.LoadScene(ScenesManager.Scenes.SelectPageScene);
         }
     }
 }

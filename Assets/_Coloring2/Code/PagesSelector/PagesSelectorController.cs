@@ -7,6 +7,8 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
+using PaintCraft.Canvas;
+using PaintCraft.Canvas.Configs;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -26,20 +28,27 @@ namespace Coloring2.PagesSelector
         [SerializeField] private Image _nextBground;
 
         private PlayerPurchasesService _purchaseService;
-        private SelectedItemService _selectedItemService;
+        private SelectedCategoryService _selectedCategoryService;
+        private PlayerInteractionActionsService _playerInteractionsService;
+        
         private ScenesSwapScreen _scenesSwapScreen;
         private Color _whiteTransparent = new Color(1, 1, 1, 0);
         private TweenerCore<Color, Color, ColorOptions> _bgroundFadeTween;
 
         private void Awake()
         {
+            if (StartApplication.Initialized == false)
+            {
+                ScenesManager.LoadScene(ScenesManager.Scenes.StartAppScene);
+                return;
+            }
             _nextBground.color = _whiteTransparent;
-            _backBtn.onClick.AddListener(OnBackBtn);
-            _pagesSwiper.SwipeComplete += OnSwipeComplete;
         }
 
         private void OnDestroy()
         {
+            if(_playerInteractionsService != null)
+                _playerInteractionsService.PagePreviewSelected -= OnPagePreviewSelected;
             _pagesSwiper.SwipeComplete -= OnSwipeComplete;
             _leftSwipeBtn.onClick.RemoveListener(OnLeftSwipeBtn);
             _rightSwipeBtn.onClick.RemoveListener(OnRightSwipeBtn);
@@ -51,6 +60,7 @@ namespace Coloring2.PagesSelector
             InitServices();
             AddPurchasedPages();
             InitControls();
+            AddListeners();
 
             await UniTask.DelayFrame(1);
 
@@ -60,7 +70,8 @@ namespace Coloring2.PagesSelector
 
         private void InitServices()
         {
-            _selectedItemService = ServicesManager.GetService<SelectedItemService>();
+            _playerInteractionsService = ServicesManager.GetService<PlayerInteractionActionsService>();
+            _selectedCategoryService = ServicesManager.GetService<SelectedCategoryService>();
             _purchaseService = ServicesManager.GetService<PlayerPurchasesService>();
             _scenesSwapScreen = ServicesManager.GetService<ProjectContextService>().ScenesSwapScreen;
         }
@@ -81,22 +92,31 @@ namespace Coloring2.PagesSelector
         
         private void InitControls()
         {
-            if (_pagesSwiper.TotalPages <= 1)
-            {
-                _leftSwipeBtn.gameObject.SetActive(false);
-                _rightSwipeBtn.gameObject.SetActive(false);
-                _pagesSwiper.Disable();
-            }
-            else
-            {
-                _leftSwipeBtn.onClick.AddListener(OnLeftSwipeBtn);
-                _rightSwipeBtn.onClick.AddListener(OnRightSwipeBtn);
-            }
+            if (_pagesSwiper.TotalPages > 1) 
+                return;
+            _leftSwipeBtn.gameObject.SetActive(false);
+            _rightSwipeBtn.gameObject.SetActive(false);
+            _pagesSwiper.Disable();
         }
         
+        private void AddListeners()
+        {
+            _playerInteractionsService.PagePreviewSelected += OnPagePreviewSelected;
+            _leftSwipeBtn.onClick.AddListener(OnLeftSwipeBtn);
+            _rightSwipeBtn.onClick.AddListener(OnRightSwipeBtn);
+            _backBtn.onClick.AddListener(OnBackBtn);
+            _pagesSwiper.SwipeComplete += OnSwipeComplete;
+        }
+
+        private void OnPagePreviewSelected(PageConfigSO config)
+        {
+            AppData.SelectedPageConfig = config;
+            _scenesSwapScreen.FadeIn(() => ScenesManager.LoadScene(ScenesManager.Scenes.PaintingScene));
+        }
+
         private void ShowSelectedPage()
         {
-            var selectedCategory = _selectedItemService.Get<CategoryConfig>();
+            var selectedCategory = _selectedCategoryService.Get<CategoryConfig>();
             _pagesSwiper.ShowPage(GetPageIdByCategory(selectedCategory));
             _currentBground.sprite = selectedCategory.PageBground;
         }
@@ -126,11 +146,11 @@ namespace Coloring2.PagesSelector
 
         private void OnSwipeComplete()
         {
-            //if(_bgroundFadeTween != null && _bgroundFadeTween.IsPlaying())
-                _bgroundFadeTween?.Kill();
+            _bgroundFadeTween?.Kill();
             
             var currentPage = _pagesSwiper.GetPageByID(_pagesSwiper.CurrentPageId).transform
                 .GetComponent<CategoryPageSelector>();
+            _selectedCategoryService.Set(currentPage.Config);
 
             var bgToShow = currentPage.Config.PageBground;
             if(_nextBground.color != _whiteTransparent)
@@ -149,14 +169,7 @@ namespace Coloring2.PagesSelector
         private void OnBackBtn()
         {
             SoundsManager.PlayClick();
-            _scenesSwapScreen.FadeInComplete += LoadMainMenuScene;
-            _scenesSwapScreen.FadeIn();
-        }
-        
-        private void LoadMainMenuScene()
-        {
-            _scenesSwapScreen.FadeInComplete -= LoadMainMenuScene;
-            ScenesManager.LoadScene(ScenesManager.Scenes.MainMenuScene);
+            _scenesSwapScreen.FadeIn(() => ScenesManager.LoadScene(ScenesManager.Scenes.MainMenuScene));
         }
     }
 }

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c71d0f9f24c56a4377de09173dec8, type: 3}
+  m_Script: {fileID: 1610504553, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: Picnic09Config
   m_EditorClassIdentifier: 
-  MiniaturImage: {fileID: 21300000, guid: a468cc446858d674faeb2517aa982628, type: 3}
-  RegionsImage: {fileID: 21300000, guid: c09e2676356f5294f95f1dd50a275d2c, type: 3}
-  ColorizedImage: {fileID: 21300000, guid: 35c927c7b4ab12048aef121028a4238c, type: 3}
+  streamingAssetPath: Coloring2/Picnic/9
+  version: 0

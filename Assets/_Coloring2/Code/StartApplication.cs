@@ -60,7 +60,7 @@ namespace Coloring2
             CreateSoundsManager();
             ServicesManager.Register<PlayerPurchasesService>(new PlayerPurchasesService(_categoryConfigs));
             ServicesManager.Register<PlayerStatisticService>(new PlayerStatisticService());
-            ServicesManager.Register<SelectedItemService>(new SelectedItemService());
+            ServicesManager.Register<SelectedCategoryService>(new SelectedCategoryService());
             ServicesManager.Register<ProjectContextService>(projectContextService)
                 .AddPopupsContainer(configsService)
                 .AddScenesSwapScreen(configsService);
