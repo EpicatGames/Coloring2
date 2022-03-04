@@ -12,6 +12,7 @@ using DG.Tweening.Plugins.Options;
 using ntw.CurvedTextMeshPro;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Coloring2.MainMenu.Categories
@@ -23,7 +24,7 @@ namespace Coloring2.MainMenu.Categories
             
         [SerializeField] private CategoryConfig _config;
         [SerializeField] private TextMeshProUGUI _nameField;
-        [SerializeField] private TextMeshProUGUI _priceField;
+        [SerializeField] private Text _priceField;
         [SerializeField] private UIEffect _uiEffect;
         [SerializeField] private GameObject _lockIcon;
         [SerializeField] private GameObject _flyingContainer;

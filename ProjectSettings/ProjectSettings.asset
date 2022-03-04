@@ -154,12 +154,12 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.Epicat.Coloring2
-    iPhone: com.Epicat.Coloring2
+    iPhone: com.epicat.drawing.painting.kids
   buildNumber:
     Standalone: 0
     iPhone: 17
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 17
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
@@ -898,7 +898,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Build: 1
+    Build: 0
     Legacy Analytics: 1
     Purchasing: 1
     UNet: 1
