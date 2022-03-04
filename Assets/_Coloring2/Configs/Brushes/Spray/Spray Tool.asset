@@ -43,7 +43,7 @@ MonoBehaviour:
   - {fileID: -6626824490372704456}
   startFilter: {fileID: 11472756}
   minSize: {x: 2, y: 2}
-  baseSize: {x: 1, y: 1}
+  baseSize: {x: 100, y: 100}
 --- !u!114 &11424504
 MonoBehaviour:
   m_ObjectHideFlags: 1

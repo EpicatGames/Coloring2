@@ -70,6 +70,7 @@
       <Path>Logs</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
+      <Path>keystore</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

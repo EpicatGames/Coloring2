@@ -1,21 +1,11 @@
 ﻿using System;
-using Coloring2.CommonComponents.PagesSwiper;
-using Coloring2.Configs;
 using UnityEngine;
 
 namespace Coloring2.CommonComponents.PagesSwiper
 {
-    [RequireComponent(typeof(PageLayoutElement))]
     public class Page : MonoBehaviour, IPage
     {
-        private PageLayoutElement _layoutElement;
-        private RectTransform _rectTransform;
-        public Vector2 Size => _layoutElement.Size;
-
-        private void Awake()
-        {
-            _layoutElement = GetComponent<PageLayoutElement>();
-        }
+        public RectTransform RectTransform => GetComponent<RectTransform>();
 
         public int Id { get; private set; }
 
@@ -24,9 +14,15 @@ namespace Coloring2.CommonComponents.PagesSwiper
             Id = id;
         }
 
+        public Vector2 GetSize()
+        {
+            var rect = RectTransform.rect;
+            return new Vector2(rect.width, rect.height);
+        }
+
         public override string ToString()
         {
-            return $"[{gameObject.name}, id: {Id}], Size: {Size}";
+            return $"[{gameObject.name}, id: {Id}], Size: {GetSize()}, pos: {RectTransform.anchoredPosition}";
         }
     }
 }

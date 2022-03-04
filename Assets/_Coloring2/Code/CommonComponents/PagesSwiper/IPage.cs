@@ -4,9 +4,10 @@ namespace Coloring2.CommonComponents.PagesSwiper
 {
     public interface IPage
     {
-        Transform transform { get; }
+        RectTransform RectTransform { get; }
+        GameObject gameObject { get; }
         int Id { get; }
         void Init(int id);
-        Vector2 Size { get; }
+        Vector2 GetSize();
     }
 }

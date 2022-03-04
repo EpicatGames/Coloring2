@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447494}
   - component: {fileID: 2035114}
+  - component: {fileID: 984855886847680893}
   - component: {fileID: 11437124}
   - component: {fileID: 1649406081799194765}
   - component: {fileID: 5016601968690507279}
@@ -61,7 +62,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 420
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -77,6 +78,20 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &984855886847680893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2004694d5146728385124975f2f5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvasController: {fileID: 11469012}
+  _cameraSize: 420
 --- !u!114 &11437124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,9 +155,9 @@ MonoBehaviour:
   brush: {fileID: 11400000, guid: c9e26870b7037f1439ea9a1222e91c0c, type: 2}
   color:
     alpha: 1
-    r: 0.4280926
-    g: 0.54765004
-    b: 0.78676474
+    r: 0.8941177
+    g: 0.29411766
+    b: 0.27450982
   spacing: 1
   scale: 0.5
   texture: {fileID: 0}
@@ -192,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPageConfig: {fileID: 11400000, guid: 11a7ea8f68fe5ab49b1a1f943af2d09f, type: 2}
-  camMaxZoomInPercent: 500
+  camMaxZoomInPercent: 100
   outlineTexture: {fileID: 0}
   regionTexture: {fileID: 0}
   outlineLayerOffset: 25

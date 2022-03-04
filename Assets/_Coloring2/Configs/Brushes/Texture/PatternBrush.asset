@@ -446,8 +446,8 @@ MonoBehaviour:
   nextFilter: {fileID: 11432428}
   pointType: -1
   textureNameInShader: 1
-  horizontalScale: 3
-  verticalScale: 3
+  horizontalScale: 1
+  verticalScale: 1
 --- !u!114 &11478692
 MonoBehaviour:
   m_ObjectHideFlags: 1

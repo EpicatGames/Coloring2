@@ -19,22 +19,34 @@ namespace Coloring2.MainMenu.Categories
         
         [SerializeField] private Swiper _swiper;
 
+        public MenuCategory SelectedCategoryItem { get; private set; }
+        
         private List<MenuCategory> _categories;
-
         private PlayerInteractionActionsService _playerActionsService;
-
+        private PlayerPurchasesService _playerPurchaseService;
         private Vector2 _centerScreen;
         private Vector2 _itemSize;
         private float _itemsGap;
-        private MenuCategory _selectedCategory;
+        
+        private void OnDestroy()
+        {
+            if(_playerActionsService != null)
+                _playerActionsService.MenuCategoryTapped -= OnMenuCategoryTapped;
+            
+            _swiper.onValueChanged.RemoveListener(OnScroll);
+            _swiper.Swipe -= OnSwipe;
+        }
 
         public async void Init(List<MenuCategory> categories)
         {
             _categories = categories;
-            
+
+            _playerPurchaseService = ServicesManager.GetService<PlayerPurchasesService>();
             _playerActionsService = ServicesManager.GetService<PlayerInteractionActionsService>();
             _playerActionsService.MenuCategoryTapped += OnMenuCategoryTapped;
 
+            CheckIfFullVersionPurchased();
+            
             var rect = _swiper.viewport.rect;
             _centerScreen = new Vector2(rect.width * .5f, rect.height * .5f);
             _swiper.SetContentPosition(new Vector2(rect.width, 0));
@@ -53,13 +65,34 @@ namespace Coloring2.MainMenu.Categories
             UpdateItemsScaleAndOpacity();
         }
 
-        private void OnDestroy()
+        private void CheckIfFullVersionPurchased()
         {
-            if(_playerActionsService != null)
-                _playerActionsService.MenuCategoryTapped -= OnMenuCategoryTapped;
-            
-            _swiper.onValueChanged.RemoveListener(OnScroll);
-            _swiper.Swipe -= OnSwipe;
+            var isFullversionPurchased = _playerPurchaseService.HasCategoryPurchased(Configs.Categories.full_version);
+            if (!isFullversionPurchased) 
+                return;
+            var fullVersionItem =_categories.FirstOrDefault(c => c.Config.Category == Configs.Categories.full_version);
+            _categories.Remove(fullVersionItem);
+            if(fullVersionItem != null)
+                fullVersionItem.gameObject.SetActive(false);
+        }
+
+        public async void ActivateAll()
+        {
+            for (var i = 0; i < _categories.Count; i++)
+            {
+                var catItem = _categories[i];
+                if (catItem.Config.Category == Configs.Categories.full_version)
+                {
+                    _categories.Remove(catItem);
+                    catItem.gameObject.SetActive(false);
+                    continue;
+                }
+                catItem.Activate();
+            }
+
+            await UniTask.DelayFrame(5);
+            var toSelect = _categories.FirstOrDefault(c => c.Config.Category == Configs.Categories.category_animals);
+            SelectCategoryItem(toSelect);
         }
 
         private void SelectCategoryItem(MenuCategory item, bool anim = false)
@@ -69,7 +102,7 @@ namespace Coloring2.MainMenu.Categories
                 _swiper.AnimateContentHorizontalTo(pos, .4f);
             else
                 _swiper.SetContentPosition(new Vector2(pos, 0));
-            _selectedCategory = item;
+            SelectedCategoryItem = item;
         }
 
         private MenuCategory GetFirstCategory()
@@ -114,7 +147,6 @@ namespace Coloring2.MainMenu.Categories
            var lastRect = (RectTransform)last.transform;
             
            UpdateItemsScaleAndOpacity();
-           //Debug.Log($"first: {first}, x: {first.transform.position.x}");
            if (first.transform.position.x >= 0)
            {
                lastRect.anchoredPosition = firstRect.anchoredPosition - new Vector2(_itemSize.x + _itemsGap, 0);
@@ -139,7 +171,7 @@ namespace Coloring2.MainMenu.Categories
                return;
            }
            
-           var index = _categories.IndexOf(_selectedCategory) + (data.Direction == Swiper.Directions.Left ? 1 : -1);
+           var index = _categories.IndexOf(SelectedCategoryItem) + (data.Direction == Swiper.Directions.Left ? 1 : -1);
            SelectCategoryItem(_categories[index], true);
            SoundsManager.PlaySwapCategory();
        }

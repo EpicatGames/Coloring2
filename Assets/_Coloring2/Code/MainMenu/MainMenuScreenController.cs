@@ -76,12 +76,6 @@ namespace Coloring2.MainMenu
             popup.Success += OnPurchaseEnterBirthdaySuccess;
         }
 
-        private void OnPurchaseEnterBirthdaySuccess(EnterBirthdayPopup popup)
-        {
-            popup.Success -= OnPurchaseEnterBirthdaySuccess;
-            popup.Close();
-        }
-
         private void OnSettingsButtonTap()
         {
             SoundsManager.PlayClick();
@@ -110,5 +104,46 @@ namespace Coloring2.MainMenu
             popup.Closed -= OnPopupClose;
             ModalPopupsManager.RemovePopup();
         }
+        
+        #region Handle Purchase Proccess
+        private void OnPurchaseEnterBirthdaySuccess(EnterBirthdayPopup popup)
+        {
+            popup.Success -= OnPurchaseEnterBirthdaySuccess;
+
+            var selectedCategory = _categoriesInteractionsController.SelectedCategoryItem.Config;
+            AddPurchaseListeners();
+            _purchaseService.Purchase(selectedCategory.Category);
+            
+            popup.Close();
+        }
+
+        private void AddPurchaseListeners()
+        {
+            _purchaseService.Purchased += OnCategoryPurchased;
+            _purchaseService.PurchaseFailed += OnPurchaseFailed;
+        }
+        
+        private void RemovePurchaseListeners()
+        {
+            _purchaseService.Purchased -= OnCategoryPurchased;
+            _purchaseService.PurchaseFailed -= OnPurchaseFailed;
+        }
+
+        private void OnPurchaseFailed(string productId) => RemovePurchaseListeners();
+
+        private void OnCategoryPurchased(Configs.Categories category)
+        {
+            RemovePurchaseListeners();
+            if (category == Configs.Categories.full_version)
+            {
+                _categoriesInteractionsController.ActivateAll();
+            }
+            else
+            {
+                var catItem = _categoriesInteractionsController.SelectedCategoryItem;
+                catItem.Activate();
+            }
+        }
+        #endregion
     }
 }

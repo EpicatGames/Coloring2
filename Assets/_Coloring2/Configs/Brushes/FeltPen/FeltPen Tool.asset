@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11474894}
   startFilter: {fileID: 11489040}
   minSize: {x: 2, y: 2}
-  baseSize: {x: 100, y: 100}
+  baseSize: {x: 85, y: 85}
 --- !u!114 &11425390
 MonoBehaviour:
   m_ObjectHideFlags: 1

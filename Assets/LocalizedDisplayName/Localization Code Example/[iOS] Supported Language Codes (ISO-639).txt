@@ -1,0 +1,47 @@
+** Link
+https://www.ibabbleon.com/iOS-Language-Codes-ISO-639.html
+
+iOS Language			.lproj Language code (ISO-639)
+------------------------------------------------------
+English (U.S.)			en		
+English (UK)			en-GB		
+English (Australian)	en-AU		
+English (Canadian)		en-CA		
+English (Indian)		en-IN		
+French					fr		
+French (Canadian)		fr-CA		
+Spanish					es		
+Spanish (Mexico)		es-MX		
+Portuguese				pt		
+Portuguese (Brazil)		pt-BR		
+Italian					it		
+German					de		
+Chinese			
+Chinese (Simplified)	zh-Hans		
+Chinese (Traditional)	zh-Hant		
+Chinese (Hong Kong)		zh-HK		
+Dutch					nl		
+Japanese				ja		
+Korean					ko		
+Vietnamese				vi		
+Russian					ru		
+Swedish					sv		
+Danish					da		
+Finnish					fi		
+Norwegian (Bokmal)		nb		
+Turkish					tr		
+Greek					el		
+Indonesian				id		
+Malay					ms		
+Thai					th		
+Hindi					hi		
+Hungarian				hu		
+Polish					pl		
+Czech					cs		
+Slovak					sk		
+Ukrainian				uk		
+Catalan					ca		
+Romanian				ro		
+Croatian				hr		
+Hebrew					he		iOS 13 ONLY
+Arabic					ar

@@ -1,8 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Coloring2.CommonComponents.PagesSwiper
 {

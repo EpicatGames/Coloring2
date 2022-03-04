@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using PaintCraft.Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,12 +23,12 @@ namespace Coloring2
         
         public void FadeIn(Action complete = null)
         {
-            _canvasGroup.DOFade(1, 0.6f).OnComplete(() => complete?.Invoke());
+            _canvasGroup.DOFade(1, 0.4f).OnComplete(() => complete?.Invoke());
         }
         
         public void FadeOut(Action complete = null)
         {
-            _canvasGroup.DOFade(0, 0.6f).OnComplete(() => complete?.Invoke());
+            _canvasGroup.DOFade(0, 0.4f).OnComplete(() => complete?.Invoke());
         }
     }
 }

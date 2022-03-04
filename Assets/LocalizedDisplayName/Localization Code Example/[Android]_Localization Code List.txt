@@ -1,0 +1,52 @@
+https://developers.helpshift.com/android/i18n/
+
+
+Values			|	Language				
+----------------+---------------------------
+values			|	English					
+values-de		|	German					
+values-es		|	Spanish					
+values-fr		|	French					
+values-it		|	Italian					
+values-ru		|	Russian					
+values-zh-rCN	|	Simplified-Chinese		
+value-zh-rTW	|	Traditional-Chinese	(TW)	
+values-zh-rSG	|	Simplified-Chinese	(SG)	
+value-zh-rHK	|	Traditional-Chinese	(HK)	
+values-pt-rBR	|	Portuguese
+values-ko		|	Korean					
+values-ja		|	Japanese				
+values-tr		|	Turkish					
+values-nl		|	Dutch					
+values-cs		|	Czech					
+values-hu		|	Hungarian				
+values-in		|	Indonesian				
+values-th		|	Thai					
+values-sl		|	Slovenian				
+values-vi		|	Vietnamese				
+values-ar		|	Arabic					
+values-pl		|	Polish					
+values-no		|	Norwegian				
+values-sv		|	Swedish					
+values-fi		|	Finnish					
+values-ro		|	Romanian				
+values-el		|	Greek					
+values-da		|	Danish					
+values-ms		|	Malay					
+values-iw		|	Hebrew					
+values-sk		|	Slovak					
+values-uk		|	Ukrainian				
+values-ca		|	Catalan					
+values-hr		|	Croatian				
+values-bn		|	Bengali					
+values-bg		|	Bulgarian				
+values-gu		|	Gujarati				
+values-hi		|	Hindi					
+values-kn		|	Kannada					
+values-lv		|	Latvian					
+values-ml		|	Malayalam				
+values-mr		|	Marathi					
+values-pa		|	Punjabi					
+values-fa		|	Persian					
+values-ta		|	Tamil					
+values-te		|	Telugu					

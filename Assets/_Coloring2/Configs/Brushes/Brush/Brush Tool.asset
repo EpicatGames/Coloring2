@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11474894}
   startFilter: {fileID: 11489040}
   minSize: {x: 2, y: 2}
-  baseSize: {x: 100, y: 100}
+  baseSize: {x: 85, y: 85}
 --- !u!114 &11425390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
     x: 563
     y: 99
     width: 245
-    height: 77
+    height: 84
   nextFilter: {fileID: 11431106}
   pointType: -1
   alpha: 0.05
@@ -181,7 +181,7 @@ MonoBehaviour:
     x: 287
     y: 99
     width: 245
-    height: 59
+    height: 64
   nextFilter: {fileID: 11474562}
   pointType: -1
 --- !u!114 &11478692
@@ -201,7 +201,7 @@ MonoBehaviour:
     x: 567
     y: 10
     width: 245
-    height: 59
+    height: 64
   nextFilter: {fileID: 11432428}
   pointType: -1
 --- !u!114 &11489040

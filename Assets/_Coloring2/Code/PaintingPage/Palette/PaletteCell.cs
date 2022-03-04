@@ -58,6 +58,11 @@ namespace Coloring2.PaintingPage.Palette
             IsLocked = locked;
             _lock.enabled = IsLocked;
         }
+
+        public void Unlock()
+        {
+            IsLocked = _lock.enabled = false;
+        }
         
         public void UpdateState(ToolTypes toolType)
         {

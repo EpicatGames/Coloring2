@@ -23,6 +23,7 @@ namespace Coloring2.MainMenu.Categories
             
         [SerializeField] private CategoryConfig _config;
         [SerializeField] private TextMeshProUGUI _nameField;
+        [SerializeField] private TextMeshProUGUI _priceField;
         [SerializeField] private UIEffect _uiEffect;
         [SerializeField] private GameObject _lockIcon;
         [SerializeField] private GameObject _flyingContainer;
@@ -67,6 +68,8 @@ namespace Coloring2.MainMenu.Categories
             var str = LocalizationManager.GetLocalization(_config.Category.ToString());
             _nameField.text = str;
 
+            _priceField.text = PlayerPurchasesService.GetPriceString(Config.Category);
+
             var currDeg = letterDefDist;
             for (var i = 0; i < str.Length - 1; i++)
                 currDeg += letterOffset;
@@ -80,6 +83,17 @@ namespace Coloring2.MainMenu.Categories
             _cancellationToken = new CancellationTokenSource();
             UniTask.Delay(TimeSpan.FromSeconds(Random.Range(0, 2f)), cancellationToken: _cancellationToken.Token)
                 .ContinueWith(StartFlyingBehaviour);
+        }
+        
+        public void Activate()
+        {
+            _uiEffect.effectFactor = 0;
+            _lockIcon.SetActive(false);
+            if (!_particleSystem.isPlaying)
+            {
+                _particleSystem.GetComponent<ParticleSystemRenderer>().sharedMaterial = Config.ParticlesMaterial;
+                _particleSystem.Play();
+            }
         }
 
         private void StartFlyingBehaviour()
@@ -95,15 +109,9 @@ namespace Coloring2.MainMenu.Categories
             var purchaseService = ServicesManager.GetService<PlayerPurchasesService>();
             var purchased = purchaseService.HasCategoryPurchased(Config.Category);
             if (!purchased)
-            {
                 _uiEffect.effectFactor = 1f;
-            }
             else
-            {
-                _particleSystem.GetComponent<ParticleSystemRenderer>().sharedMaterial = Config.ParticlesMaterial;
-                _lockIcon.SetActive(false);
-                _particleSystem.Play();
-            }
+                Activate();
         }
 
         public void UpdateScaleAndOpacity()

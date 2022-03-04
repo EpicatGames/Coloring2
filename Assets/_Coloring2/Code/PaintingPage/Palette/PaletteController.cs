@@ -25,6 +25,7 @@ namespace Coloring2.PaintingPage.Palette
 
         private AppConfig _appConfig;
         private PaintToolsController _paintToolController;
+        private PlayerPurchasesService _purchaseService;
 
         private void Awake()
         {
@@ -43,25 +44,31 @@ namespace Coloring2.PaintingPage.Palette
 
         public void Hide()
         {
-            _view.DOScale(0, 0.2f);
+            _view.DOScale(0, 0.4f)
+                .OnComplete(() => _view.gameObject.SetActive(false));
             _callPaletteBtn.PaletteOutsideClosed?.Invoke();
         }
         
         public void Show()
         {
-            _view.DOScale(1, 0.2f);
+            _view.gameObject.SetActive(true);
+            _view.DOScale(1, 0.4f);
         }
 
         public void Init()
         {
+            _purchaseService = ServicesManager.GetService<PlayerPurchasesService>();
+            
             _appConfig = ServicesManager.GetService<ConfigsService>().GetConfig<AppConfig>();
             _paintToolController.ToolSelected += OnToolSelected;
             CellTapped += OnCellTapped;
-            
+
+            var allColorsPurchased = _purchaseService.HasAllColorsPurchased() ||
+                                     _purchaseService.HasCategoryPurchased(Categories.full_version);
             for (var i = 0; i < _cells.Length; i++)
             {
                 var cell = _cells[i];
-                var locked = i > 5;
+                var locked = !allColorsPurchased && i > 5;
                 cell.Init(CellTapped, locked);
                 if (i == 0)
                     SelectCell(cell);
@@ -106,14 +113,22 @@ namespace Coloring2.PaintingPage.Palette
             popup.Success -= OnSettingsEnterBirthdaySuccess;
             SoundsManager.PlayCorrectBirthYear();
 
-            Debug.Log($"OnSettingsEnterBirthdaySuccess");
-            
             ModalPopupsManager.ShowPopup(_appConfig.ColorsPurchasePopupRef);
+            _purchaseService.Purchased += OnPurchased;
             ModalPopupsManager.Current.Closed += OnPopupClose;
         }
-        
+
+        private void OnPurchased(Categories category)
+        {
+            foreach (var cell in _cells)
+            {
+                if(cell.IsLocked)cell.Unlock();
+            }
+        }
+
         private void OnPopupClose(IPopup popup)
         {
+            _purchaseService.Purchased -= OnPurchased;
             popup.Closed -= OnPopupClose;
             ModalPopupsManager.RemovePopup();
         }

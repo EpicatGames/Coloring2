@@ -26,13 +26,13 @@ namespace Coloring2.PaintingPage
 
         public void Show()
         {
-            _rectTransform.DOAnchorPosX(_defaultXPos, .25f);
+            _rectTransform.DOAnchorPosX(_defaultXPos, .4f);
             Opened = true;
         }
 
         public void Hide()
         {
-            _rectTransform.DOAnchorPosX(_hideXPos, .25f);
+            _rectTransform.DOAnchorPosX(_hideXPos, .4f);
             _palette.Hide();
             Opened = false;
         }

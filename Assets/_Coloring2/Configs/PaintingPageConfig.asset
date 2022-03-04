@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 785119231, guid: e0388dcb68ee47a4a85430ea96987ce8, type: 3}
   m_Name: PaintingPageConfig
   m_EditorClassIdentifier: 
-  userSavePersistentPath: paintingpage
-  iconSize: {x: 512, y: 256}
-  size: {x: 1920, y: 1080}
+  userSavePersistentPath: coloring2
+  iconSize: {x: 400, y: 300}
+  size: {x: 1024, y: 768}
