@@ -1,10 +1,12 @@
-﻿using Coloring2.Localization;
+﻿using Coloring2.Configs;
+using Coloring2.DataServices;
+using Coloring2.Localization;
 using Coloring2.Popups;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Coloring2.MainMenu.Settings
+namespace Coloring2.Popups
 {
     public class SettingsPopup : AbstractModalPopup
     {
@@ -14,6 +16,14 @@ namespace Coloring2.MainMenu.Settings
         [SerializeField] private Button _fullVersionBtn;
         [SerializeField] private Button _privacyPolicyBtn;
         [SerializeField] private Button _ourWebsiteBtn;
+        
+        private PlayerPurchasesService _purchasesServices;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _purchasesServices = ServicesManager.GetService<PlayerPurchasesService>();
+        }
 
         protected override void OnDestroy()
         {
@@ -76,7 +86,7 @@ namespace Coloring2.MainMenu.Settings
         private void OnFullVersionBtnTap()
         {
             SoundsManager.PlayClick();
-            //Close();
+            _purchasesServices.Purchase(Categories.full_version);
         }
 
         private void OnRestorePurchasesBtnTap()
@@ -95,9 +105,9 @@ namespace Coloring2.MainMenu.Settings
             SoundsManager.PlayClick();
             string rateUsURL = null; 
 #if UNITY_IOS
-            rateUsURL = "https://itunes.apple.com/app/id1546739987?action=write-review";
+            rateUsURL = "https://itunes.apple.com/app/id1610790880?action=write-review";
 #elif UNITY_ANDROID
-            rateUsURL = "https://play.google.com/store/apps/details?id=com.epicat.coloring";
+            rateUsURL = "https://play.google.com/store/apps/details?id=com.Epicat.Coloring2";
 #else
             rateUsURL = "http://epicat.fun/";
 #endif

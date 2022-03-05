@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549aa28e52c04e87a1209d508b640f32, type: 3}
   m_Name: AppConfig
   m_EditorClassIdentifier: 
-  SceneToLoadAferStartApp: 2
+  SceneToLoadAferStartApp: 1
   PopupsContainerRef: {fileID: 7783288976325489819, guid: 5fd5eb2061ba253408a52545dc32e986,
     type: 3}
   ScenesSwapScreenRef: {fileID: 4379634066441586064, guid: ff88733271762824398663cc7bff2bd1,

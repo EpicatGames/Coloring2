@@ -73,7 +73,7 @@ namespace Coloring2.MainMenu.Categories
             var fullVersionItem =_categories.FirstOrDefault(c => c.Config.Category == Configs.Categories.full_version);
             _categories.Remove(fullVersionItem);
             if(fullVersionItem != null)
-                fullVersionItem.gameObject.SetActive(false);
+                Destroy(fullVersionItem.gameObject);
         }
 
         public async void ActivateAll()
@@ -84,7 +84,8 @@ namespace Coloring2.MainMenu.Categories
                 if (catItem.Config.Category == Configs.Categories.full_version)
                 {
                     _categories.Remove(catItem);
-                    catItem.gameObject.SetActive(false);
+                    Destroy(catItem.gameObject);
+                    i--;
                     continue;
                 }
                 catItem.Activate();

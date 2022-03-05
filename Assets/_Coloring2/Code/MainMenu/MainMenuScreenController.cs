@@ -31,8 +31,11 @@ namespace Coloring2.MainMenu
         private void OnDestroy()
         {
             _categoriesInteractionsController.CategorySelected -= OnCategorySelected;
-            if(_playerInteractionsService != null)
-                _playerInteractionsService.SettingsButtonTapped -= OnSettingsButtonTap;
+            if(_playerInteractionsService == null)
+                return;
+            
+            _playerInteractionsService.SettingsButtonTapped -= OnSettingsButtonTap;
+            _purchaseService.Purchased -= OnCategoryPurchased;
         }
 
         private async void Start()
@@ -41,6 +44,8 @@ namespace Coloring2.MainMenu
             _purchaseService = ServicesManager.GetService<PlayerPurchasesService>();
             _scenesSwapScreen = ServicesManager.GetService<ProjectContextService>().ScenesSwapScreen;
             
+            _purchaseService.Purchased += OnCategoryPurchased;
+
             if (isFirstOpening)
             {
                 _scenesSwapScreen.Show();
@@ -109,35 +114,16 @@ namespace Coloring2.MainMenu
         private void OnPurchaseEnterBirthdaySuccess(EnterBirthdayPopup popup)
         {
             popup.Success -= OnPurchaseEnterBirthdaySuccess;
-
             var selectedCategory = _categoriesInteractionsController.SelectedCategoryItem.Config;
-            AddPurchaseListeners();
             _purchaseService.Purchase(selectedCategory.Category);
             
             popup.Close();
         }
 
-        private void AddPurchaseListeners()
-        {
-            _purchaseService.Purchased += OnCategoryPurchased;
-            _purchaseService.PurchaseFailed += OnPurchaseFailed;
-        }
-        
-        private void RemovePurchaseListeners()
-        {
-            _purchaseService.Purchased -= OnCategoryPurchased;
-            _purchaseService.PurchaseFailed -= OnPurchaseFailed;
-        }
-
-        private void OnPurchaseFailed(string productId) => RemovePurchaseListeners();
-
         private void OnCategoryPurchased(Configs.Categories category)
         {
-            RemovePurchaseListeners();
             if (category == Configs.Categories.full_version)
-            {
                 _categoriesInteractionsController.ActivateAll();
-            }
             else
             {
                 var catItem = _categoriesInteractionsController.SelectedCategoryItem;
