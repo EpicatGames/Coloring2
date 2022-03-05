@@ -157,7 +157,7 @@ PlayerSettings:
     iPhone: com.epicat.drawing.painting.kids
   buildNumber:
     Standalone: 0
-    iPhone: 17
+    iPhone: 19
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 19
