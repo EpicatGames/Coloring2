@@ -14,9 +14,7 @@ namespace Coloring2.DataServices
         #region Static
         private static IStoreController _storeController;
         private static IExtensionProvider _storeExtensionProvider;
-        //private const string boughtSomethingKey = "bought_something";
-        //private const string successfulCrossPromoKey = "successful_cross_promo";
-        
+
         private static bool IsIAPInitialized() => _storeController != null && _storeExtensionProvider != null;
         
         public static string GetPriceString(Categories category)
@@ -42,14 +40,8 @@ namespace Coloring2.DataServices
             InitializePurchasing();
             _categoryConfigs = categoryConfigs;
             CheckOnStart();
-            //SuccessfulCrossPromo += OnSuccessfulCrossPromo;
         }
-        
-        public override void Dispose()
-        {
-            //SuccessfulCrossPromo -= OnSuccessfulCrossPromo;
-        }
-        
+
         private void InitializePurchasing()
         {
             var module = StandardPurchasingModule.Instance();
